@@ -8,6 +8,7 @@
         object VideoMessage(string url, string number);
         object DocumentMessage(string url, string number);
         object LocationMessage(string lat, string lon, string title, string addr, string number);
+        object ConfirmAddressMessage(string name, string address, string language, string number);
         object ButtonsMessage(string number);
     }
 }

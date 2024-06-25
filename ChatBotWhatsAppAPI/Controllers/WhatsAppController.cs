@@ -88,8 +88,8 @@ namespace ChatBotWhatsAppAPI.Controllers
                     //}
                     #endregion
 
-                    var responseGemini = await _gemini.Execute(userText);
-                    var objectMessage = _utilities.TextMessage(responseGemini, userNumber);
+                    //var responseGemini = await _gemini.Execute(userText);
+                    var objectMessage = _utilities.ConfirmAddressMessage("Caiqui Viera", "Colonia 821 esq. J. Torres Garcia", "es_AR", userNumber);
                     listObjectMessage.Add(objectMessage);
 
                     foreach (var item in listObjectMessage)

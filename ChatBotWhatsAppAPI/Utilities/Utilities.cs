@@ -2,6 +2,45 @@
 {
     public class Utilities: IUtilities
     {
+        public object ConfirmAddressMessage(string name, string address, string language, string number)
+        {
+            return new
+            {
+                messaging_product = "whatsapp",
+                recipient_type = "individual",
+                to = number,
+                type = "template",
+                template = new
+                {
+                    name = "test_template",
+                    language = new
+                    {
+                        code = language
+                    },
+                    components = new object[]
+                    {
+                        new
+                        {
+                            type = "body",
+                            parameters = new object[]
+                            {
+                                new
+                                {
+                                    type = "text",
+                                    text = name
+                                },
+                                new
+                                {
+                                    type = "text",
+                                    text = address
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+        }
+
         public object TextMessage(string message, string number)
         {
             return new
